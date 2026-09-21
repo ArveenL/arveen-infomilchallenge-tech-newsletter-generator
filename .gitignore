@@ -1,0 +1,17 @@
+#indique à Git d’ignorer tout le dossier de notre environnement virtuel
+venv/ 
+
+#contains temporary files automatically created by python
+__pycache__/
+
+#cached files automatically created by macOS in some files
+.DS_Store
+
+#file that will later contain API key and other secret info
+.env 
+
+# * -> all files
+# .pyc -> with this extension auto-compiled by python
+# these files are auto-created and shoudn't be recorded in Git
+*.pyc 
+
