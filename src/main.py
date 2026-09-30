@@ -1,32 +1,46 @@
+# imports
 import feedparser
 from bs4 import BeautifulSoup
 import json
 
-rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
-feed = feedparser.parse(rss_url)
+# feedpasser
+dotnet_rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
+devto_rss_url = "https://dev.to/feed"
+dotnet_feed = feedparser.parse(dotnet_rss_url)
+devto_feed = feedparser.parse(devto_rss_url)
 
-
+# maquillage(might delete later)
 print("🕺🏽 Infomil Tech Newsletter Generator 🫈")
 print()
 
-articles = []
+# revise to understand
+def process_feed(feed, source, category):
+    
+    articles = []
+    article_id = 1
 
-article_id = 1
+    for article in feed.entries:
+        article_data = {}
+        article_data["id"] = article_id
+        article_data["source"] = source
+        article_data["category"] = category
+        article_data["relevance_score"] = 0
+        article_data["title"] = article.title
+        article_data["link"] = article.link
+        article_data["published"] = article.published
+        soup = BeautifulSoup(article.summary, "html.parser")
+        article_data["summary"] = soup.get_text(" ", strip=True)
+        articles.append(article_data)
+        article_id += 1
 
-for article in feed.entries:
-    article_data = {}
-    article_data["id"] = article_id
-    article_data["source"] = "Microsoft .NET Blog"
-    article_data["category"] = ".NET"
-    article_data["relevance_score"] = 0
-    article_data["title"] = article.title
-    article_data["link"] = article.link
-    article_data["published"] = article.published
-    soup = BeautifulSoup(article.summary, "html.parser")
-    article_data["summary"] = soup.get_text(" ", strip=True)
-    articles.append(article_data)
+    return articles
 
-    article_id += 1
+# name for easy revision/understanding
+dotnet_articles = process_feed(dotnet_feed,"Microsoft .NET Blog", ".NET")
+devto_articles = process_feed(devto_feed, "Dev.to", "General Tech")
+
+articles = dotnet_articles + devto_articles
+
 
 
 # ==========================================================================================
