@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Build Agentic UI with the new Blazor AI components",
+        "link": "https://devblogs.microsoft.com/dotnet/build-agentic-ui-blazor/",
+        "published": "Mon, 28 Sep 2026 17:05:00 +0000",
+        "summary": "Build Agentic UI with the new Blazor AI components for streamed content, tools, approvals, shared state, and generative experiences. The post Build Agentic UI with the new Blazor AI components appeared first on .NET Blog ."
+    },
+    {
+        "id": 2,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "AG-UI Protocol now has a first-class .NET SDK",
+        "link": "https://devblogs.microsoft.com/dotnet/ag-ui-dotnet-sdk/",
+        "published": "Fri, 25 Sep 2026 17:05:00 +0000",
+        "summary": "The new AG-UI .NET SDK enables .NET services to expose and consume interoperable agent endpoints using Microsoft.Extensions.AI. The post AG-UI Protocol now has a first-class .NET SDK appeared first on .NET Blog ."
+    },
+    {
+        "id": 3,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Microsoft is updating its author-signing certificate starting September 23, 2026",
+        "link": "https://devblogs.microsoft.com/dotnet/microsoft-author-signing-certificate-update-2026/",
+        "published": "Wed, 23 Sep 2026 20:00:00 +0000",
+        "summary": "Starting September 23, 2026, Microsoft is updating the author-signing certificate used for NuGet packages. Customers using trusted signer policies or certificate fingerprint verification should add the new certificate as soon as possible. The post Microsoft is updating its author-signing certificate starting September 23, 2026 appeared first on .NET Blog ."
+    },
+    {
+        "id": 4,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Creating a memory dump in C#",
+        "link": "https://devblogs.microsoft.com/dotnet/creating-a-memory-dump-in-csharp/",
+        "published": "Tue, 22 Sep 2026 17:05:00 +0000",
+        "summary": "Learn how to create a memory dump in C# to capture the state of your application for debugging purposes. The post Creating a memory dump in C# appeared first on .NET Blog ."
+    },
+    {
+        "id": 5,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Build Your Own AI Agent Harness in C#, the MafClaw Live Series",
+        "link": "https://devblogs.microsoft.com/dotnet/build-your-own-ai-agent-harness-in-csharp-the-maf-claw-live-series/",
+        "published": "Wed, 16 Sep 2026 21:00:00 +0000",
+        "summary": "I am building a complete C# agent live, from a single call around an IChatClient to a production-ready, observable, governed agent, using the Microsoft Agent Framework harness in a 4-part Microsoft Reactor series. The post Build Your Own AI Agent Harness in C#, the MafClaw Live Series appeared first on .NET Blog ."
+    },
+    {
+        "id": 6,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Performance Improvements in .NET 11",
+        "link": "https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-11/",
+        "published": "Tue, 15 Sep 2026 12:00:00 +0000",
+        "summary": "Take a tour through hundreds of performance improvements in .NET 11. The post Performance Improvements in .NET 11 appeared first on .NET Blog ."
+    },
+    {
+        "id": 7,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Share your .NET story with the community",
+        "link": "https://devblogs.microsoft.com/dotnet/share-your-dotnet-story/",
+        "published": "Mon, 14 Sep 2026 17:05:00 +0000",
+        "summary": "Share how your team uses .NET to solve real problems and help us bring more community stories to .NET Conf 2026 and other .NET channels. The post Share your .NET story with the community appeared first on .NET Blog ."
+    },
+    {
+        "id": 8,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Use C# unions and closed hierarchies in ASP.NET Core",
+        "link": "https://devblogs.microsoft.com/dotnet/unions-and-closed-hierarchies-in-aspnetcore/",
+        "published": "Thu, 10 Sep 2026 17:00:00 +0000",
+        "summary": "Learn how C# unions and closed hierarchies work with System.Text.Json across ASP.NET Core Minimal APIs, MVC, SignalR, Blazor, and OpenAPI. The post Use C# unions and closed hierarchies in ASP.NET Core appeared first on .NET Blog ."
+    },
+    {
+        "id": 9,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": "Announcing .NET 11 Release Candidate 1",
+        "link": "https://devblogs.microsoft.com/dotnet/dotnet-11-rc-1/",
+        "published": "Tue, 08 Sep 2026 21:30:00 +0000",
+        "summary": ".NET 11 Release Candidate 1 is available with improvements across libraries, runtime, SDK, MSBuild, NuGet, C#, F#, ASP.NET Core, .NET MAUI, and Windows Forms. The post Announcing .NET 11 Release Candidate 1 appeared first on .NET Blog ."
+    },
+    {
+        "id": 10,
+        "source": "Microsoft .NET Blog",
+        "category": ".NET",
+        "relevance_score": 0,
+        "title": ".NET Conf 2026 Community Days Call for Presenters Is Open",
+        "link": "https://devblogs.microsoft.com/dotnet/dotnet-conf-2026-community-days-call-for-presenters/",
+        "published": "Tue, 08 Sep 2026 20:30:00 +0000",
+        "summary": "Submit your session proposal for the community-led .NET Conf 2026 Community Days by October 6, 2026. The post .NET Conf 2026 Community Days Call for Presenters Is Open appeared first on .NET Blog ."
+    }
+]

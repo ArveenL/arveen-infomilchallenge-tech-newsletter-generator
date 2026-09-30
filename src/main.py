@@ -1,5 +1,6 @@
 import feedparser
 from bs4 import BeautifulSoup
+import json
 
 rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
 feed = feedparser.parse(rss_url)
@@ -27,12 +28,11 @@ for article in feed.entries:
 
     article_id += 1
 
-    print (article.title)
-    print (article.link)
-    print (article.published)
-    print ("-" * 50)
-    print()
 
+# ==========================================================================================
+# Crée articles.json + ouvre le pour écrire dedans + appele ce dernier 'file' pour l'instant
+with open("articles.json", "w") as file:
+    json.dump(articles, file, indent=4)
+# ==========================================================================================
 
-
-
+print("Articles saved in articles.json")
