@@ -1,5 +1,4 @@
-# =========================== Imports ===========================
-
+# Imports
 import feedparser
 from bs4 import BeautifulSoup
 import json
@@ -11,7 +10,7 @@ print("🕺🏽 Infomil Tech Newsletter Generator 🫈")
 print()
 
 
-# =========================== GitHub Releases API ===========================
+# =========================== ❗️GitHub Releases API❗️ ===========================
 
 # URLs des API GitHub Releases
 dotnet_github_releases_url = "https://api.github.com/repos/dotnet/core/releases"
@@ -53,11 +52,11 @@ for release in react_releases:
         react_filtered_releases.append(release)
 
 
-# =========================== End GitHub Releases API ===========================
+# =========================== ❗️End of GitHub Releases API❗️ ===========================
 
 
 
-# =========================== RSS ===========================
+# =========================== ❗️RSS❗️ ===========================
 
 # URLs des flux RSS
 dotnet_rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
@@ -114,11 +113,11 @@ devto_articles = process_feed(
 )
 
 
-# =========================== End RSS ===========================
+# =========================== ❗️End RSS❗️ ===========================
 
 
 
-# =========================== Web Scraper ===========================
+# =========================== ❗️Web Scraper❗️ ===========================
 
 # URLs des sites à scraper
 dotnet_scraper_url = "https://devblogs.microsoft.com/dotnet/"
@@ -280,11 +279,11 @@ devto_scraped_articles = []
 # sera ajoutée à la prochaine étape.
 
 
-# =========================== End Web Scraper ===========================
+# =========================== ❗️End Web Scraper❗️ ===========================
 
 
 
-# =========================== Structure GitHub .NET 10 ===========================
+# =========================== ❗️Structure GitHub .NET 10 ❗️===========================
 
 # Liste pour stocker les releases .NET 10 structurées
 dotnet10_articles = []
@@ -311,11 +310,11 @@ for release in dotnet10_releases:
     release_id += 1
 
 
-# =========================== End Structure GitHub .NET 10 ===========================
+# =========================== ❗️End Structure GitHub .NET 10❗️ ===========================
 
 
 
-# =========================== Structure GitHub Angular 22 ===========================
+# =========================== ❗️Structure GitHub Angular 22❗️ ===========================
 
 # Liste pour stocker les releases Angular 22 structurées
 angular_articles = []
@@ -347,11 +346,11 @@ for release in angular22_releases:
     release_id += 1
 
 
-# =========================== End Structure GitHub Angular 22 ===========================
+# =========================== ❗️End Structure GitHub Angular 22❗️ ===========================
 
 
 
-# =========================== Structure GitHub React ===========================
+# =========================== ❗️Structure GitHub React❗️ ===========================
 
 # Liste pour stocker les releases React 19 structurées
 react_articles = []
@@ -384,11 +383,11 @@ for release in react_filtered_releases:
     release_id += 1
 
 
-# =========================== End Structure GitHub React ===========================
+# =========================== ❗️End Structure GitHub React❗️ ===========================
 
 
 
-# =========================== Liste générale ===========================
+# =========================== ❗️Liste générale❗️ ===========================
 
 articles = (
     dotnet_articles
@@ -401,11 +400,11 @@ articles = (
 )
 
 
-# =========================== End Liste générale ===========================
+# =========================== ❗️End Liste générale❗️ ===========================
 
 
 
-# =========================== JSON ===========================
+# =========================== ❗️JSON❗️ ===========================
 
 # Créer articles.json et y enregistrer tous les articles
 with open("articles.json", "w") as file:
@@ -415,4 +414,4 @@ with open("articles.json", "w") as file:
 print("Articles saved in articles.json")
 
 
-# =========================== End JSON ===========================
+# =========================== ❗️End JSON❗️ ===========================
