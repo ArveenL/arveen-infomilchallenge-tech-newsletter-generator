@@ -1,19 +1,42 @@
-# imports
-import feedparser
-from bs4 import BeautifulSoup # to clean RSS flux
+# ===========================imports =======================
+import feedparser             
+from bs4 import BeautifulSoup 
 import json
+import requests               
+# ===========================imports =======================
 
-# feedpasser
+
+# ================================Github releases API ==========================
+dotnet_github_releases_url = "https://api.github.com/repos/dotnet/core/releases"
+dotnet_response = requests.get(dotnet_github_releases_url) # Envoyer la requête à l’API GitHub
+dotnet_releases = dotnet_response.json() # Transformer la réponse GitHub en données Python
+
+#Stocker uniquement releases .NET 10
+dotnet10_releases = []
+
+# Filtrer uniquement les releases .NET 10
+for release in dotnet_releases:
+    if release["name"].startswith(".NET 10"):
+        dotnet10_releases.append(release)
+
+print(len(dotnet10_releases))
+# ================================Github releases API ==========================
+
+# ==========================Feedpasser ========================
 dotnet_rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
 devto_rss_url = "https://dev.to/feed"
 dotnet_feed = feedparser.parse(dotnet_rss_url)
 devto_feed = feedparser.parse(devto_rss_url)
+# ==========================feedpasser ========================
+
 
 # maquillage(might delete later)
 print("🕺🏽 Infomil Tech Newsletter Generator 🫈")
 print()
 
-# revise to understand
+
+# Prendre un flux RSS brut et transformer chaque entrée en un article propre, 
+# structuré et prêt à être ajouté dans notre JSON
 def process_feed(feed, source, category, start_id = 1):
     
     articles = []
@@ -35,7 +58,9 @@ def process_feed(feed, source, category, start_id = 1):
 
     return articles
 
-# name for easy revision/understanding
+
+# On traite séparément les articles .NET et Dev.to, on donne des IDs continus, 
+# puis on les rassemble dans une seule liste finale appelée articles
 dotnet_articles = process_feed(dotnet_feed,"Microsoft .NET Blog", ".NET")
 devto_articles = process_feed(devto_feed, "Dev.to", "General Tech", len(dotnet_articles) + 1)
 
@@ -43,10 +68,10 @@ articles = dotnet_articles + devto_articles
 
 
 
-# ==========================================================================================
+# ============================================JSON===========================================
 # Crée articles.json + ouvre le pour écrire dedans + appele ce dernier 'file' pour l'instant
 with open("articles.json", "w") as file:
     json.dump(articles, file, indent=4)
-# ==========================================================================================
+# ============================================JSON===========================================
 
 print("Articles saved in articles.json")
