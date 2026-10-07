@@ -1,6 +1,6 @@
 # imports
 import feedparser
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup # to clean RSS flux
 import json
 
 # feedpasser
@@ -14,10 +14,10 @@ print("🕺🏽 Infomil Tech Newsletter Generator 🫈")
 print()
 
 # revise to understand
-def process_feed(feed, source, category):
+def process_feed(feed, source, category, start_id = 1):
     
     articles = []
-    article_id = 1
+    article_id = start_id
 
     for article in feed.entries:
         article_data = {}
@@ -37,7 +37,7 @@ def process_feed(feed, source, category):
 
 # name for easy revision/understanding
 dotnet_articles = process_feed(dotnet_feed,"Microsoft .NET Blog", ".NET")
-devto_articles = process_feed(devto_feed, "Dev.to", "General Tech")
+devto_articles = process_feed(devto_feed, "Dev.to", "General Tech", len(dotnet_articles) + 1)
 
 articles = dotnet_articles + devto_articles
 
