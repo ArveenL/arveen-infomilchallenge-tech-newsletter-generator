@@ -8,24 +8,39 @@ import requests
 
 # =========================== GitHub Releases API =======================
 dotnet_github_releases_url = "https://api.github.com/repos/dotnet/core/releases"
+angular_github_releases_url = "https://api.github.com/repos/angular/angular/releases"
 
 # Envoyer la requête à l'API GitHub
 dotnet_response = requests.get(dotnet_github_releases_url)
+angular_response = requests.get(angular_github_releases_url)
 
-# Transformer la réponse GitHub en données Python
+# Transformer la réponse GitHub en données Python/JSON
 dotnet_releases = dotnet_response.json()
+angular_releases = angular_response.json()
 
-# Liste pour stocker uniquement les releases .NET 10
+
+
+# Liste pour stocker uniquement les releases .NET 10 et Angular
 dotnet10_releases = []
+angular22_releases = []
 
 # Filtrer uniquement les releases .NET 10
 for release in dotnet_releases:
     if release["name"].startswith(".NET 10"):
         dotnet10_releases.append(release)
+
+# Filtrer uniquement les releases Angular 22
+for release in angular_releases:
+        if release["name"].startswith("22."):
+            angular22_releases.append(release)
+
+#TEST temporaire
+
+
 # =========================== end GitHub Releases API =======================
 
 
-# =========================== RSS =======================
+# =========================== Struture RSS =======================
 dotnet_rss_url = "https://devblogs.microsoft.com/dotnet/feed/"
 devto_rss_url = "https://dev.to/feed"
 
@@ -79,7 +94,7 @@ devto_articles = process_feed(
     "General Tech",
     len(dotnet_articles) + 1
 )
-# =========================== end RSS =======================
+# =========================== end Struture RSS =======================
 
 
 # =========================== Structure GitHub .NET 10 =======================
@@ -105,19 +120,46 @@ for release in dotnet10_releases:
     dotnet10_articles.append(release_data)
 
     release_id += 1
-
-# TEST temporaire
-
-
 # =========================== end Structure GitHub .NET 10 =======================
 
 
-# =========================== Liste générale =======================
-articles = dotnet_articles + devto_articles + dotnet10_articles
-# =========================== Liste générale =======================
+# =========================== Structure GitHub Angular 22 =======================
+
+# Liste pour stocker les releases Angular 22 structurées
+angular_articles = []
+
+# Les IDs Angular commencent après les articles RSS et .NET 10
+release_id = len(dotnet_articles) + len(devto_articles) + len(dotnet10_articles) + 1
+
+for release in angular22_releases:
+    release_data = {}
+
+    release_data["id"] = release_id
+    release_data["source"] = "GitHub Releases"
+    release_data["category"] = "Angular"
+    release_data["relevance_score"] = 0
+    release_data["title"] = release["name"]
+    release_data["link"] = release["html_url"]
+    release_data["published"] = release["published_at"]
+    release_data["summary"] = release["body"]
+
+    angular_articles.append(release_data)
+
+    release_id += 1
+
+# =========================== Structure GitHub Angular 22 =======================
 
 # TEST temporaire
 
+
+
+
+# =========================== Liste générale =======================
+articles = dotnet_articles + devto_articles + dotnet10_articles + angular_articles
+# =========================== Liste générale =======================
+
+# TEST temporaire
+print("Total articles:", len(articles))
 
 # =========================== JSON =======================
 # Crée articles.json, l'ouvre en écriture et appelle temporairement le fichier "file"
