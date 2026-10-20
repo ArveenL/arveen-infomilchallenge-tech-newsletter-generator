@@ -2,19 +2,19 @@
 
 Sélection automatique des actualités technologiques les plus pertinentes.
 
-## 1. .NET 10.0.13
+## 1. Bring Your Own Model to the GitHub Copilot SDK with C#
 
 **Thème :** .NET
 
-**Source :** GitHub Releases
+**Source :** Microsoft .NET Blog
 
-**Score :** 18
+**Score :** 34
 
-**Date :** 2026-10-13T22:24:29Z
+**Date :** Mon, 19 Oct 2026 16:00:00 +0000
 
-[Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.13/10.0.13.md) [Install Instructions](https://github.com/dotnet/core/blob/main/release-notes/10.0/install.md) # Repos * [Aspnetcore](https://github.com/dotnet/aspnetcore/releases/tag/v10.0.13) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v10.0.113) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v...
+The GitHub Copilot SDK gives your application an agent runtime. BYOK lets you keep that runtime while sending model requests to your own Microsoft Foundry or Azure OpenAI deployment. Here is the complete C# setup. The post Bring Your Own Model to the GitHub Copilot SDK with C# appeared first on .NET Blog ....
 
-https://github.com/dotnet/core/releases/tag/v10.0.13
+https://devblogs.microsoft.com/dotnet/bring-your-own-model-to-the-github-copilot-sdk-with-csharp
 
 ---
 
@@ -50,19 +50,19 @@ https://github.com/react/react/releases/tag/v19.3.0
 
 ---
 
-## 4. The Scariest Lines of Code I've Ever Written. Boooo!!!
+## 4. Introducing sqlsimtools
 
 **Thème :** SQL Server
 
-**Source :** Dev.to
+**Source :** Microsoft SQL Server Blog
 
-**Score :** 5
+**Score :** 24
 
-**Date :** 
+**Date :** 2026-10-14T05:19:22.512-07:00
 
-Cesar Aguirre Posted on Oct 19 • Originally published at canro91.github.io The Scariest Lines of Code I've Ever Written. Boooo!!! # discuss # beginners # sql # sqlserver I don't remember if it was rainy or sunny outside. It was more than five years ago. I was still becoming a senior coder. I've written hundreds of thousands of lines of code that I don't remember anymore. But I still remember these...
+Years ago, in a galaxy far, far away, my colleagues in support, Keith Elmore and Robert Dorr, built a tool called **ostress.exe**. For decades it transformed the way we reproduced customer issues for SQL Server. The engineering team used it, and up until now I've used it for demonstrations, books, and examples. Its magic was simple: ostress could simulate many concurrent users running SQL queries...
 
-https://dev.to/canro91/the-scariest-lines-of-code-ive-ever-written-boooo-2ban
+https://techcommunity.microsoft.com/blog/sqlserver/introducing-sqlsimtools/4563955
 
 ---
 
@@ -74,43 +74,43 @@ https://dev.to/canro91/the-scariest-lines-of-code-ive-ever-written-boooo-2ban
 
 **Score :** 26
 
-**Date :** 
+**Date :** 2026-10-18T10:55:38Z
 
-Giorgi Kobaidze Posted on Oct 18 Promise Delivered: Welcome to the DEV Hall of Fame (65 Authors, 65 Masterpieces) # community # discuss # showdev # writing Over 10 hours of reading behind it Status: Promise delivered ✅ The Doors Are Open A little over a month ago, I published this: Show Me the Article You're Most Proud Of And I'll Read Every Single One of Them Community members share hidden gem po...
+*Status: Promise delivered ✅* --- ## The Doors Are Open A little over a month ago, I published this: [Show Me the Article You're Most Proud Of And I'll Read Every Single One of Them](https://dev.to/georgekobaidze/show-me-the-article-youre-most-proud-of-and-ill-read-every-single-one-of-them-1l53) [Community members share hidden gem posts](https://dev.to/georgekobaidze/show-me-the-article-youre-most...
 
 https://dev.to/georgekobaidze/promise-delivered-welcome-to-the-dev-hall-of-fame-65-authors-65-masterpieces-15fa
 
 ---
 
-## 6. Fine-Tuning Qwen3-8B with Tinker: From 50% to 76% Accuracy, and Burning Through My Budget
+## 6. Durable Task in the Real World: What Problems Does It Actually Solve?
+
+**Thème :** .NET
+
+**Source :** Microsoft .NET Blog
+
+**Score :** 24
+
+**Date :** Mon, 12 Oct 2026 16:30:00 +0000
+
+Five practical examples of when durable execution makes sense, when it does not, and what it means for AI agents. The post Durable Task in the Real World: What Problems Does It Actually Solve? appeared first on .NET Blog ....
+
+https://devblogs.microsoft.com/dotnet/durable-task-in-the-real-world
+
+---
+
+## 7. Your agent's retry bug isn't an AI problem. It's a distributed-systems problem with an LLM on top.
 
 **Thème :** IA Générative
 
 **Source :** Dev.to
 
-**Score :** 25
+**Score :** 24
 
-**Date :** 
+**Date :** 2026-10-19T06:42:45Z
 
-Daniel Balcarek Posted on Oct 18 Fine-Tuning Qwen3-8B with Tinker: From 50% to 76% Accuracy, and Burning Through My Budget # devchallenge # hf26challenge # ai # machinelearning Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Submission 💸 This is a submission for the Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Oktoberfest? YES! 🍺 Ah... this one is Hacktoberfest. Okay, stil...
+Most agent demos have a happy path: the model picks a tool, the tool returns 200, the agent moves on. Production is different. In production, the tool call sometimes returns nothing at all. That is where a correct decision turns into a wrong outcome. ## The gap between "decided" and "done" Here is an illustrative scenario (not a real incident, but a very ordinary one). An agent handles a support t...
 
-https://dev.to/gramli/fine-tuning-qwen3-8b-with-tinker-from-50-to-76-accuracy-and-burning-through-my-budget-48mh
-
----
-
-## 7. .NET 10.0.12
-
-**Thème :** .NET
-
-**Source :** GitHub Releases
-
-**Score :** 18
-
-**Date :** 2026-09-08T22:08:06Z
-
-[Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.12/10.0.12.md) [Install Instructions](https://github.com/dotnet/core/blob/main/release-notes/10.0/install.md) # Repos * [Aspnetcore](https://github.com/dotnet/aspnetcore/releases/tag/v10.0.12) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v10.0.112) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v...
-
-https://github.com/dotnet/core/releases/tag/v10.0.12
+https://dev.to/cyclopt_dimitrisk/your-agents-retry-bug-isnt-an-ai-problem-its-a-distributed-systems-problem-with-an-llm-on-top-1i6k
 
 ---
 

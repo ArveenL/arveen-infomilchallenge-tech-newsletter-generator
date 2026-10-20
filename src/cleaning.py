@@ -1,81 +1,58 @@
-# ❗❗❗ NETTOYAGE DES DONNÉES ❗❗❗
+from bs4 import BeautifulSoup
+from markdownify import markdownify
 
-# ---------- Fonction de nettoyage ----------
 
-# Nettoyer une valeur texte
 def clean_text(text):
-    # Si la valeur est vide
-    if text is None:
-        return ""
-
-    # Transformer en texte
-    text = str(text)
-
-    # Retirer les espaces inutiles
-    text = text.strip()
-
-    # Remplacer plusieurs espaces par un seul
-    text = " ".join(text.split())
-
-    # Retourner le résultat
-    return text
+    """Nettoyer les métadonnées sur une ligne."""
+    return " ".join(str(text or "").split())
 
 
-# ---------- Dédoublonner et nettoyer les articles ----------
+def clean_content(text):
+    """Conserver les paragraphes et l'indentation du Markdown existant."""
+    return str(text or "").replace("\r\n", "\n").replace("\r", "\n").strip("\n")
+
+
+def html_to_markdown(html):
+    """Convertir uniquement le corps fourni, sans scripts ni contrôles UI."""
+    soup = BeautifulSoup(str(html or ""), "html.parser")
+    for element in soup.select(
+        "script, style, button, form, input, select, textarea, "
+        ".highlight__panel, .copy-code-button, .anchor"
+    ):
+        element.decompose()
+    return clean_content(markdownify(str(soup), heading_style="ATX"))
+
+
+def make_summary(content):
+    """Un extrait court, distinct du corps complet."""
+    return clean_text(content)[:400]
+
 
 def clean_articles(articles):
-    """
-    Deduplicate articles by normalized URL, clean strings, handle None values.
-    """
-    # Déduplication
-    unique_articles = []
-    seen_links = set()
-
-    # Copier et nettoyer les liens
-    processed_articles = []
+    """Dédupliquer par URL en conservant le contenu le plus riche."""
+    by_link = {}
     for article in articles:
-        # Créer une copie pour éviter de modifier l'original si nécessaire
-        article_copy = dict(article)
-        link = article_copy.get("link", "")
-        if link:
-            # Retirer ? et # du lien
-            link_cleaned = link.split("?")[0].split("#")[0]
-            # Retirer le / final
-            link_cleaned = link_cleaned.rstrip("/")
-            article_copy["link"] = link_cleaned
-        else:
-            article_copy["link"] = ""
-        processed_articles.append(article_copy)
-
-    # Vérifier les doublons
-    for article in processed_articles:
-        link = article["link"]
-        if link and link not in seen_links:
-            unique_articles.append(article)
-            seen_links.add(link)
-
-    # Nettoyer les champs texte
-    for article in unique_articles:
-        article["source"] = clean_text(
-            article["source"]
+        cleaned = dict(article)
+        for field in ("source", "category", "title", "link", "published"):
+            cleaned[field] = clean_text(cleaned.get(field))
+        link = cleaned["link"].split("?")[0].split("#")[0].rstrip("/")
+        if not link:
+            continue
+        cleaned["link"] = link
+        cleaned["content"] = clean_content(
+            cleaned.get("content") or cleaned.get("summary", "")
         )
-        article["category"] = clean_text(
-            article["category"]
+        cleaned["summary"] = make_summary(
+            cleaned.get("summary") or cleaned["content"]
         )
-        article["title"] = clean_text(
-            article["title"]
-        )
-        article["link"] = clean_text(
-            article["link"]
-        )
-        article["published"] = clean_text(
-            article["published"]
-        )
-        article["summary"] = clean_text(
-            article["summary"]
-        )
-
-    return unique_articles
-
-
-# ❗❗❗ END NETTOYAGE DES DONNÉES ❗❗❗
+        existing = by_link.get(link)
+        if existing is None:
+            by_link[link] = cleaned
+            continue
+        # La longueur du corps est un critère MVP simple, indépendant de l'ordre.
+        if len(cleaned["content"]) > len(existing["content"]):
+            existing["content"] = cleaned["content"]
+        for field in ("source", "category", "title", "published", "summary"):
+            if not existing.get(field):
+                existing[field] = cleaned[field]
+    return list(by_link.values())

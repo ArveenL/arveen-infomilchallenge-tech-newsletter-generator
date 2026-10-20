@@ -49,6 +49,21 @@ def save_results(articles, selected_articles):
             ensure_ascii=False
         )
 
+    # Export minimal : uniquement les articles de la sélection finale.
+    llm_input = [
+        {
+            "title": article.get("title", ""),
+            "source": article.get("source", ""),
+            "topic": article.get("topic", ""),
+            "published": article.get("published", ""),
+            "link": article.get("link", ""),
+            "content": article.get("content", ""),
+        }
+        for article in selected_articles
+    ]
+    with open("llm_input.json", "w", encoding="utf-8") as file:
+        json.dump(llm_input, file, indent=4, ensure_ascii=False)
+
     # Préparer le Markdown
     newsletter = "# Infomil Tech Newsletter\n\n"
     newsletter += (
@@ -143,6 +158,7 @@ def save_results(articles, selected_articles):
 
     print("✅ articles.json créé")
     print("✅ selected_articles.json créé")
+    print("✅ llm_input.json créé")
     print("✅ newsletter_preview.md créé")
     print()
     print(

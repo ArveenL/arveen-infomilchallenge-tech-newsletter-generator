@@ -3,6 +3,8 @@
 # Télécharger des données depuis Internet
 import requests
 
+from cleaning import make_summary
+
 
 # ❗❗❗ GITHUB RELEASES API ❗❗❗
 
@@ -126,7 +128,11 @@ def get_github_articles():
         )
         react_articles.append(release_data)
 
-    return dotnet10_articles + angular_articles + react_articles
+    articles = dotnet10_articles + angular_articles + react_articles
+    for article in articles:
+        article["content"] = article["summary"]
+        article["summary"] = make_summary(article["content"])
+    return articles
 
 
 # ❗❗❗ END GITHUB RELEASES API ❗❗❗

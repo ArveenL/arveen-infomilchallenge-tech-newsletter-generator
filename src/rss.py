@@ -6,6 +6,8 @@ import feedparser
 # Lire et analyser du HTML
 from bs4 import BeautifulSoup
 
+from cleaning import html_to_markdown, make_summary
+
 
 # ❗❗❗ RSS ❗❗❗
 
@@ -69,10 +71,17 @@ def process_feed(feed, source, category):
         )
 
         # Transformer le résumé HTML en texte propre
-        article_data["summary"] = soup.get_text(
+        article_data["summary"] = make_summary(soup.get_text(
             " ",
             strip=True
+        ))
+
+        # content:encoded contient souvent l'article complet, summary l'extrait.
+        content_parts = article.get("content", [])
+        full_content = "\n\n".join(
+            part.get("value", "") for part in content_parts if part.get("value")
         )
+        article_data["content"] = html_to_markdown(full_content or article_summary)
 
         # Ajouter l'article terminé
         articles.append(article_data)

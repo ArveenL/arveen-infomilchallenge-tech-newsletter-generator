@@ -65,10 +65,7 @@ def detect_topic(article):
     ).lower()
 
     # Récupérer le résumé en minuscules
-    summary = article.get(
-        "summary",
-        ""
-    ).lower()
+    summary = (article.get("content") or article.get("summary", "")).lower()
 
     # Récupérer la catégorie d'origine
     category = article.get(
@@ -197,10 +194,7 @@ def calculate_score(article):
     ).lower()
 
     # Récupérer le résumé en minuscules
-    summary = article.get(
-        "summary",
-        ""
-    ).lower()
+    summary = (article.get("content") or article.get("summary", "")).lower()
 
 
     # ---------- Chercher les mots-clés ----------
