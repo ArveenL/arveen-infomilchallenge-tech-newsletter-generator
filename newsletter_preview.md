@@ -2,23 +2,23 @@
 
 Sélection automatique des actualités technologiques les plus pertinentes.
 
-## 1. Build Your Own AI Agent Harness in C#, the MafClaw Live Series
+## 1. .NET 10.0.13
 
 **Thème :** .NET
 
-**Source :** Microsoft .NET Blog
+**Source :** GitHub Releases
 
-**Score :** 32
+**Score :** 18
 
-**Date :** Wed, 16 Sep 2026 21:00:00 +0000
+**Date :** 2026-10-13T22:24:29Z
 
-I am building a complete C# agent live, from a single call around an IChatClient to a production-ready, observable, governed agent, using the Microsoft Agent Framework harness in a 4-part Microsoft Reactor series. The post Build Your Own AI Agent Harness in C#, the MafClaw Live Series appeared first on .NET Blog ....
+[Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.13/10.0.13.md) [Install Instructions](https://github.com/dotnet/core/blob/main/release-notes/10.0/install.md) # Repos * [Aspnetcore](https://github.com/dotnet/aspnetcore/releases/tag/v10.0.13) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v10.0.113) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v...
 
-https://devblogs.microsoft.com/dotnet/build-your-own-ai-agent-harness-in-csharp-the-maf-claw-live-series
+https://github.com/dotnet/core/releases/tag/v10.0.13
 
 ---
 
-## 2. 22.2.2
+## 2. 22.2.3
 
 **Thème :** Angular
 
@@ -26,63 +26,79 @@ https://devblogs.microsoft.com/dotnet/build-your-own-ai-agent-harness-in-csharp-
 
 **Score :** 3
 
-**Date :** 2026-10-08T17:50:06Z
+**Date :** 2026-10-14T23:38:58Z
 
-### compiler | Commit | Description | | -- | -- | | [![fix - fa63bfad14](https://img.shields.io/badge/fa63bfad14-fix-green)](https://github.com/angular/angular/commit/fa63bfad14dfb94d2985d7e486c8b0b98c231e52) | avoid leaking ::ng-deep detection state between rules | | [![fix - 5744e7575c](https://img.shields.io/badge/5744e7575c-fix-green)](https://github.com/angular/angular/commit/5744e7575ccdcc13...
+### common | Commit | Description | | -- | -- | | [![fix - fafec77b5d](https://img.shields.io/badge/fafec77b5d-fix-green)](https://github.com/angular/angular/commit/fafec77b5d4e6dfc89aad72db9c132d3dfe46ba6) | harden param encoding against prototype pollution | ### compiler | Commit | Description | | -- | -- | | [![fix - 54f3de517c](https://img.shields.io/badge/54f3de517c-fix-green)](https://github...
 
-https://github.com/angular/angular/releases/tag/v22.2.2
+https://github.com/angular/angular/releases/tag/v22.2.3
 
 ---
 
-## 3. Solodesk-Ai
+## 3. 19.3.0 (September 9, 2026)
 
 **Thème :** React
 
-**Source :** Dev.to
+**Source :** GitHub Releases
 
-**Score :** 9
+**Score :** 6
 
-**Date :** 
+**Date :** 2026-09-09T18:01:33Z
 
-Shaurya Tiwari Posted on Oct 12 • Fully Autonomous Solodesk-Ai # devchallenge # hf26challenge # ai # programming Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Submission 💸 What I Built SoloDesk AI is a privacy-first, zero-marginal-cost financial copilot and invoice intelligence engine built for freelancers, consultants, and solo agency founders. Powered by Google Gemma 2 open weights,...
+Below is a list of all new features, APIs, and bug fixes. Read the [React 19.3 release post](https://react.dev/blog/2026/09/09/react-19-3) for more information. ## New React Features - `<ViewTransition />`: Adds `<ViewTransition />` and `addTransitionType` APIs to power View Transition animations in React (@sebmarkbage, @jackpope, @gaearon: [#31975](https://github.com/facebook/react/pull/31975), [...
 
-https://dev.to/dr5t/solodesk-ai-lpe
+https://github.com/react/react/releases/tag/v19.3.0
 
 ---
 
-## 4. What LLMs 'Know' That You Don't Know They Know: Stop Inventing Prompt DSLs and Ride 50 Years of Unix Pre-Training Gravity
+## 4. The Scariest Lines of Code I've Ever Written. Boooo!!!
+
+**Thème :** SQL Server
+
+**Source :** Dev.to
+
+**Score :** 5
+
+**Date :** 
+
+Cesar Aguirre Posted on Oct 19 • Originally published at canro91.github.io The Scariest Lines of Code I've Ever Written. Boooo!!! # discuss # beginners # sql # sqlserver I don't remember if it was rainy or sunny outside. It was more than five years ago. I was still becoming a senior coder. I've written hundreds of thousands of lines of code that I don't remember anymore. But I still remember these...
+
+https://dev.to/canro91/the-scariest-lines-of-code-ive-ever-written-boooo-2ban
+
+---
+
+## 5. Promise Delivered: Welcome to the DEV Hall of Fame (65 Authors, 65 Masterpieces)
 
 **Thème :** IA Générative
 
 **Source :** Dev.to
 
-**Score :** 33
+**Score :** 26
 
 **Date :** 
 
-Randal L. Schwartz for Google Developer Experts Posted on Oct 11 What LLMs 'Know' That You Don't Know They Know: Stop Inventing Prompt DSLs and Ride 50 Years of Unix Pre-Training Gravity # ai # programming # unix # architecture Synthetic Scars (8 Part Series) 1 Why AI Keeps Making the Same Coding Mistakes—And How Teaching It Pain Gives It Wisdom 2 Why AI Coding Agents Crash at 3 AM: The Happy-Path...
+Giorgi Kobaidze Posted on Oct 18 Promise Delivered: Welcome to the DEV Hall of Fame (65 Authors, 65 Masterpieces) # community # discuss # showdev # writing Over 10 hours of reading behind it Status: Promise delivered ✅ The Doors Are Open A little over a month ago, I published this: Show Me the Article You're Most Proud Of And I'll Read Every Single One of Them Community members share hidden gem po...
 
-https://dev.to/gde/what-llms-know-that-you-dont-know-they-know-stop-inventing-prompt-dsls-and-ride-50-years-of-2bl6
+https://dev.to/georgekobaidze/promise-delivered-welcome-to-the-dev-hall-of-fame-65-authors-65-masterpieces-15fa
 
 ---
 
-## 5. Georgian Language Benchmark: Two Biggest AI Labs Clash in a Language That Doesn't Play by Anyone's Rules
+## 6. Fine-Tuning Qwen3-8B with Tinker: From 50% to 76% Accuracy, and Burning Through My Budget
 
 **Thème :** IA Générative
 
 **Source :** Dev.to
 
-**Score :** 27
+**Score :** 25
 
 **Date :** 
 
-Giorgi Kobaidze Posted on Oct 11 Georgian Language Benchmark: Two Biggest AI Labs Clash in a Language That Doesn't Play by Anyone's Rules # devchallenge # kagglechallenge # ai # machinelearning Kaggle Benchmarking Challenge Submission This is a submission for the Kaggle Benchmarking Challenge Table of Contents One Eye, Zero Excuses What I Benchmarked Why Georgian? What I Built The Plan vs Reality ...
+Daniel Balcarek Posted on Oct 18 Fine-Tuning Qwen3-8B with Tinker: From 50% to 76% Accuracy, and Burning Through My Budget # devchallenge # hf26challenge # ai # machinelearning Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Submission 💸 This is a submission for the Hacktoberfest Open-Source AI Challenge Week 2: Side Hustle Oktoberfest? YES! 🍺 Ah... this one is Hacktoberfest. Okay, stil...
 
-https://dev.to/georgekobaidze/georgian-language-benchmark-two-biggest-ai-labs-clash-in-a-language-that-doesnt-play-by-anyones-5b22
+https://dev.to/gramli/fine-tuning-qwen3-8b-with-tinker-from-50-to-76-accuracy-and-burning-through-my-budget-48mh
 
 ---
 
-## 6. .NET 10.0.12
+## 7. .NET 10.0.12
 
 **Thème :** .NET
 
@@ -95,22 +111,6 @@ https://dev.to/georgekobaidze/georgian-language-benchmark-two-biggest-ai-labs-cl
 [Release Notes](https://github.com/dotnet/core/blob/main/release-notes/10.0/10.0.12/10.0.12.md) [Install Instructions](https://github.com/dotnet/core/blob/main/release-notes/10.0/install.md) # Repos * [Aspnetcore](https://github.com/dotnet/aspnetcore/releases/tag/v10.0.12) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v10.0.112) * [dotnet](https://github.com/dotnet/dotnet/releases/tag/v...
 
 https://github.com/dotnet/core/releases/tag/v10.0.12
-
----
-
-## 7. Step Away From the Terminal: I Built BreakPoint with Entire to Disconnect Burned-Out Developers in 15 Seconds
-
-**Thème :** React
-
-**Source :** Dev.to
-
-**Score :** 9
-
-**Date :** 
-
-S M Tahosin Posted on Oct 12 Step Away From the Terminal: I Built BreakPoint with Entire to Disconnect Burned-Out Developers in 15 Seconds # devchallenge # hf26challenge # touchgrass # entire Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass Submission 🌿 This is a submission for the Hacktoberfest Open-Source AI Challenge Week 1: Touch Grass The 3-Hour Compiler Trap & Prefrontal Exhaustion...
-
-https://dev.to/smtahosin/step-away-from-the-terminal-i-built-breakpoint-with-entire-to-disconnect-burned-out-developers-in-37n4
 
 ---
 

@@ -17,7 +17,6 @@ DOTNET_RSS_URL = "https://devblogs.microsoft.com/dotnet/feed/"
 # Adresse du flux RSS Dev.to
 DEVTO_RSS_URL = "https://dev.to/feed"
 
-
 # ---------- Structurer les articles RSS ----------
 
 # Transformer un flux RSS en liste d'articles structurés
@@ -94,6 +93,7 @@ def get_rss_articles():
     # Télécharger et lire le RSS Dev.to
     devto_feed = feedparser.parse(DEVTO_RSS_URL)
 
+
     # Transformer le RSS .NET en articles structurés
     dotnet_articles = process_feed(
         dotnet_feed,
@@ -107,7 +107,7 @@ def get_rss_articles():
         "Dev.to",
         "General Tech"
     )
-
+    
     return dotnet_articles + devto_articles
 
 
