@@ -66,23 +66,39 @@ https://techcommunity.microsoft.com/blog/sqlserver/introducing-sqlsimtools/45639
 
 ---
 
-## 5. Promise Delivered: Welcome to the DEV Hall of Fame (65 Authors, 65 Masterpieces)
+## 5. How to Coordinate Role-Based CLI Seats & Session Handovers for AI Agents: A Governance MCP Server
 
 **Thème :** IA Générative
 
 **Source :** Dev.to
 
-**Score :** 26
+**Score :** 41
 
-**Date :** 2026-10-18T10:55:38Z
+**Date :** Wed, 21 Oct 2026 05:06:41 +0000
 
-*Status: Promise delivered ✅* --- ## The Doors Are Open A little over a month ago, I published this: [Show Me the Article You're Most Proud Of And I'll Read Every Single One of Them](https://dev.to/georgekobaidze/show-me-the-article-youre-most-proud-of-and-ill-read-every-single-one-of-them-1l53) [Community members share hidden gem posts](https://dev.to/georgekobaidze/show-me-the-article-youre-most...
+How to Coordinate Role-Based CLI Seats & Session Handovers for AI Agents: A Governance MCP Server in Python In 2026, multi-agent software engineering swarms (Claude Desktop, Cursor, OpenAI Codex, Roo-Code, AutoGen) frequently operate directly on local repositories and shell environments. Teams deploy autonomous agents to build features, fix bugs, run test suites, and execute deployments. However,...
 
-https://dev.to/georgekobaidze/promise-delivered-welcome-to-the-dev-hall-of-fame-65-authors-65-masterpieces-15fa
+https://dev.to/johann_schiffer/how-to-coordinate-role-based-cli-seats-session-handovers-for-ai-agents-a-governance-mcp-server-2bl8
 
 ---
 
-## 6. Durable Task in the Real World: What Problems Does It Actually Solve?
+## 6. I Built a Small LLM From Scratch — Here’s What I Finally Understood About Transformer
+
+**Thème :** IA Générative
+
+**Source :** Dev.to
+
+**Score :** 31
+
+**Date :** Wed, 21 Oct 2026 05:13:19 +0000
+
+I used to understand Large Language Models mostly from the outside. I knew terms like: Transformer Attention Embeddings Tokens Fine-tuning GPT LLM But knowing the terminology is very different from understanding what actually happens inside a model. So instead of only reading about LLMs, I decided to build a small language model from scratch using PyTorch . The goal wasn't to build the next ChatGP...
+
+https://dev.to/onlydev75/i-built-a-small-llm-from-scratch-heres-what-i-finally-understood-about-transformer-2h2o
+
+---
+
+## 7. Durable Task in the Real World: What Problems Does It Actually Solve?
 
 **Thème :** .NET
 
@@ -95,22 +111,6 @@ https://dev.to/georgekobaidze/promise-delivered-welcome-to-the-dev-hall-of-fame-
 Five practical examples of when durable execution makes sense, when it does not, and what it means for AI agents. The post Durable Task in the Real World: What Problems Does It Actually Solve? appeared first on .NET Blog ....
 
 https://devblogs.microsoft.com/dotnet/durable-task-in-the-real-world
-
----
-
-## 7. Your agent's retry bug isn't an AI problem. It's a distributed-systems problem with an LLM on top.
-
-**Thème :** IA Générative
-
-**Source :** Dev.to
-
-**Score :** 24
-
-**Date :** 2026-10-19T06:42:45Z
-
-Most agent demos have a happy path: the model picks a tool, the tool returns 200, the agent moves on. Production is different. In production, the tool call sometimes returns nothing at all. That is where a correct decision turns into a wrong outcome. ## The gap between "decided" and "done" Here is an illustrative scenario (not a real incident, but a very ordinary one). An agent handles a support t...
-
-https://dev.to/cyclopt_dimitrisk/your-agents-retry-bug-isnt-an-ai-problem-its-a-distributed-systems-problem-with-an-llm-on-top-1i6k
 
 ---
 

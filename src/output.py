@@ -2,9 +2,45 @@
 
 # Créer et écrire du JSON
 import json
+from pathlib import Path
 
 
 # ❗❗❗ OUTPUT ❗❗❗
+
+def generate_newsletter():
+    """Générer la newsletter finale à partir des résumés français validés."""
+    project_root = Path(__file__).resolve().parent.parent
+    with (project_root / "llm_summaries.json").open(encoding="utf-8") as file:
+        summaries = json.load(file)
+
+    newsletter = "# Lettre d’actualité technologique Infomil\n\n"
+    newsletter += (
+        "Retrouvez notre sélection d’actualités du développement logiciel, "
+        "avec des résumés techniques en français et les points à retenir "
+        "pour votre pratique.\n\n"
+    )
+    for index, article in enumerate(summaries, start=1):
+        if not all(
+            isinstance(article.get(field), str) and article[field].strip()
+            for field in ("summary_fr", "why_it_matters_fr")
+        ):
+            raise ValueError(f"Article {index} : résumé français incomplet")
+        newsletter += (
+            f"## {index}. {article['title']}\n\n"
+            f"**Thème :** {article['topic']}\n\n"
+            f"**Source :** {article['source']}\n\n"
+            f"**Date de publication :** {article['published']}\n\n"
+            f"{article['summary_fr']}\n\n"
+            f"**Pourquoi c’est important**\n\n"
+            f"{article['why_it_matters_fr']}\n\n"
+            f"[Lire l’article complet]({article['link']})\n\n"
+            "---\n\n"
+        )
+    newsletter += "Bonne lecture et à bientôt pour une nouvelle sélection technologique.\n"
+    output_path = project_root / "newsletter.md"
+    output_path.write_text(newsletter, encoding="utf-8")
+    return output_path
+
 
 def save_results(articles, selected_articles):
     """
@@ -65,7 +101,7 @@ def save_results(articles, selected_articles):
         json.dump(llm_input, file, indent=4, ensure_ascii=False)
 
     # Préparer le Markdown
-    newsletter = "# Infomil Tech Newsletter\n\n"
+    newsletter = "# Lettre d’actualité technologique Infomil\n\n"
     newsletter += (
         "Sélection automatique des actualités "
         "technologiques les plus pertinentes.\n\n"
@@ -167,3 +203,6 @@ def save_results(articles, selected_articles):
 
 
 # ❗❗❗ END OUTPUT ❗❗❗
+
+if __name__ == "__main__":
+    print(f"✅ {generate_newsletter().name} créé")
