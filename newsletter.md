@@ -10,11 +10,11 @@ Retrouvez notre sélection d’actualités du développement logiciel, avec des 
 
 **Date de publication :** Mon, 19 Oct 2026 16:00:00 +0000
 
-L’article présente une application console .NET 10 utilisant GitHub.Copilot.SDK 1.0.11 pour diriger l’inférence vers un déploiement Microsoft Foundry. ProviderConfig sépare le choix du fournisseur du runtime Copilot, qui reste nécessaire pour gérer le client et les sessions. L’exemple configure un endpoint compatible avec la Responses API et privilégie Microsoft Entra ID via AzureCliCredential ; une clé API reste une option. Les paramètres sont chargés avec User Secrets. La session désactive outils, skills et opérations Git pour isoler une requête. Avec un modèle de raisonnement, la limite de sortie inclut aussi les tokens de raisonnement.
+Microsoft montre comment créer une application qui utilise les outils de GitHub Copilot tout en choisissant le service d’intelligence artificielle chargé de répondre. Le modèle, c’est le programme qui produit les réponses. Dans cet exemple, il est hébergé sur Microsoft Foundry. Copilot continue d’organiser les échanges, mais les questions sont envoyées au fournisseur choisi. L’application commence par un test simple : poser une question, sans autoriser d’autres actions. La connexion utilise de préférence un compte Microsoft Entra ID. Une clé d’accès reste possible et doit être conservée en dehors du code.
 
 **Pourquoi c’est important**
 
-Cette séparation permet de conserver l’orchestration du GitHub Copilot SDK tout en choisissant son propre fournisseur d’inférence. L’exemple fournit une base C# minimale pour vérifier le routage et l’authentification avant d’ajouter des capacités à l’agent.
+Une équipe peut garder les outils de Copilot tout en choisissant le service d’IA utilisé. L’exemple permet de vérifier que la connexion fonctionne avant de donner davantage de capacités à l’assistant.
 
 [Lire l’article complet](https://devblogs.microsoft.com/dotnet/bring-your-own-model-to-the-github-copilot-sdk-with-csharp)
 
@@ -28,11 +28,11 @@ Cette séparation permet de conserver l’orchestration du GitHub Copilot SDK to
 
 **Date de publication :** 2026-10-14T23:38:58Z
 
-Angular 22.2.3 renforce l’encodage des paramètres et la compilation JIT contre la prototype pollution. Le compiler prend en charge les points dans les noms de class bindings et les property bindings de popover, tout en corrigeant plusieurs diagnostics. Dans core, les correctifs concernent notamment initEventReplay lorsque deux applications partagent un APP_ID, la destruction de vues avec animations et les ticks imbriqués pendant une détection de changements. Le module forms utilise addEventListener pour éviter une planification systématique de la détection de changements sur blur. Le router vérifie l’état du signal d’annulation dès la souscription.
+Angular, un outil utilisé pour construire des applications web, reçoit une mise à jour corrective. La version 22.2.3 renforce des protections contre la modification indésirable de certains objets internes du programme. Elle corrige aussi plusieurs erreurs dans la préparation et l’exécution des pages. Certains correctifs concernent les animations ou les situations où plusieurs applications fonctionnent ensemble. Les formulaires évitent désormais de lancer systématiquement une vérification des changements quand on quitte un champ. Enfin, la gestion du passage entre les pages vérifie plus tôt si une opération a déjà été annulée.
 
 **Pourquoi c’est important**
 
-Cette version combine des renforcements contre la prototype pollution avec des corrections de compilation et d’exécution. Elle évite aussi de déclencher systématiquement la détection de changements lors des événements blur dans forms.
+Ces corrections visent la sécurité et la fiabilité des applications web utilisant Angular. Elles limitent aussi certaines vérifications inutiles lors de l’utilisation des formulaires.
 
 [Lire l’article complet](https://github.com/angular/angular/releases/tag/v22.2.3)
 
@@ -46,11 +46,11 @@ Cette version combine des renforcements contre la prototype pollution avec des c
 
 **Date de publication :** 2026-09-09T18:01:33Z
 
-React 19.3.0 introduit ViewTransition et addTransitionType pour les animations, ainsi que les refs sur Fragment. Dans react-dom, browser() permet de réserver un sous-arbre au navigateur avec use(browser()) dans Suspense ; onBrowserBailout signale ce report côté serveur. Les transitions sont désormais rendues indépendamment : une transition lente ne bloque plus les autres. La version active l’intégration de Trusted Types et corrige Fast Refresh, Activity, la propagation du contexte et useDeferredValue. Elle améliore également le décodage et la sérialisation des échanges Flight, ajoute des protections contre les cycles et les dénis de service, et corrige plusieurs problèmes de rendu serveur.
+React sert à construire les interfaces des sites et applications. Sa version 19.3.0 ajoute des outils pour animer les changements à l’écran. Elle permet aussi de réserver certaines parties d’une page au navigateur, plutôt que de les préparer sur le serveur qui héberge le site. Les mises à jour d’affichage deviennent plus indépendantes : une opération lente ne bloque plus les autres opérations sans rapport. Cette version corrige également de nombreux problèmes de fonctionnement. Elle améliore le traitement des données échangées avec le serveur et renforce les protections contre certains blocages et tentatives de surcharge.
 
 **Pourquoi c’est important**
 
-Les nouvelles API facilitent les animations et la délimitation des parties exclusivement exécutées dans le navigateur. Les changements touchent aussi l’indépendance des transitions, la fiabilité du rendu serveur et la robustesse des échanges React Server Components.
+Ces nouveautés donnent aux équipes davantage de moyens pour rendre les interfaces fluides et fiables. Les corrections concernent aussi la préparation des pages sur le serveur et les échanges nécessaires à leur affichage.
 
 [Lire l’article complet](https://github.com/react/react/releases/tag/v19.3.0)
 
@@ -64,35 +64,53 @@ Les nouvelles API facilitent les animations et la délimitation des parties excl
 
 **Date de publication :** 2026-10-14T05:19:22.512-07:00
 
-sqlsimtools est une suite gratuite et open source de simulation de charges SQL, disponible en public preview. Elle cible SQL Server 2019, 2022 et 2025, Azure SQL Database, Azure SQL Managed Instance et SQL database dans Microsoft Fabric. sqlsim fournit une CLI native fondée sur ODBC pour Windows x64 et ARM64 et Ubuntu Linux ; sqlpysim utilise le driver mssql-python. sqlsim Studio, disponible sur Windows x64, configure, exécute et compare les charges dans une application locale accessible par navigateur. La suite permet les tests de charge, le rejeu d’activité, le suivi des performances et l’automatisation via des résultats JSON.
+sqlsimtools est un ensemble gratuit d’outils dont le code est accessible publiquement. Il permet de tester des bases de données, les systèmes qui organisent et stockent les informations des applications. Il simule notamment les demandes de nombreux utilisateurs en même temps. Les équipes peuvent reproduire une activité passée, observer les performances et comparer les résultats avant et après une modification. Une interface visuelle est proposée sur Windows. Plusieurs outils fonctionnent aussi sur Ubuntu Linux. Le projet est encore en version d’essai publique. Ce n’est pas un produit Microsoft officiel bénéficiant de son assistance.
 
 **Pourquoi c’est important**
 
-Ces outils permettent de reproduire des charges concurrentes et de comparer les performances avant et après un changement. Le projet reste en preview et ne constitue pas un produit Microsoft officiel couvert par son support.
+Ces tests aident à repérer des ralentissements et à évaluer les effets d’un changement sur une base de données. Ils permettent de comparer des résultats mesurés plutôt que de se fier à une impression.
 
 [Lire l’article complet](https://techcommunity.microsoft.com/blog/sqlserver/introducing-sqlsimtools/4563955)
 
 ---
 
-## 5. Promise Delivered: Welcome to the DEV Hall of Fame (65 Authors, 65 Masterpieces)
+## 5. How to Coordinate Role-Based CLI Seats & Session Handovers for AI Agents: A Governance MCP Server
 
 **Thème :** IA Générative
 
 **Source :** Dev.to
 
-**Date de publication :** 2026-10-18T10:55:38Z
+**Date de publication :** Wed, 21 Oct 2026 05:06:41 +0000
 
-Ce catalogue rassemble 65 articles publiés sur DEV, chacun choisi par son auteur, et représente plus de 600 minutes de lecture annoncée. Les contributions sont regroupées par thèmes : apprentissage, systèmes, IA, architecture et outils. Les sujets techniques incluent les interfaces, AWS VPC, les CTE SQL, l’idempotence, WebRTC, les write-ahead logs et WebGPU. La partie IA aborde notamment les comparaisons d’assistants de programmation, la recherche sémantique, les contrôles d’approbation, les tests de prompt injection et l’évaluation du RAG. Chaque entrée comporte un commentaire de l’organisateur et, lorsqu’elle est disponible, la raison du choix de l’auteur.
+Quand plusieurs assistants d’intelligence artificielle travaillent sur le même projet, ils peuvent modifier les mêmes fichiers et se gêner. L’article présente CliSeat, un outil conçu pour organiser ce travail. Il attribue à un seul assistant à la fois le droit de modifier une partie donnée du projet. Il prévoit aussi un compte rendu pour transmettre le travail à l’assistant suivant. Des fonctions limitent les commandes autorisées et masquent certains identifiants secrets. Une version gratuite existe. L’historique persistant, la récupération automatique des accès abandonnés et le masquage des identifiants sont présentés dans l’offre payante.
 
 **Pourquoi c’est important**
 
-Le classement thématique facilite la découverte de retours d’expérience techniques au-delà des seuls articles les plus populaires. Plusieurs contributions sur l’IA examinent concrètement les défauts de validation, de tests et de contrôle des outils.
+La coordination des assistants peut aider à éviter qu’ils écrasent leurs modifications respectives. Un historique de transmission permet aussi de reprendre le travail en sachant ce qui a déjà été fait.
 
-[Lire l’article complet](https://dev.to/georgekobaidze/promise-delivered-welcome-to-the-dev-hall-of-fame-65-authors-65-masterpieces-15fa)
+[Lire l’article complet](https://dev.to/johann_schiffer/how-to-coordinate-role-based-cli-seats-session-handovers-for-ai-agents-a-governance-mcp-server-2bl8)
 
 ---
 
-## 6. Durable Task in the Real World: What Problems Does It Actually Solve?
+## 6. I Built a Small LLM From Scratch — Here’s What I Finally Understood About Transformer
+
+**Thème :** IA Générative
+
+**Source :** Dev.to
+
+**Date de publication :** Wed, 21 Oct 2026 05:13:19 +0000
+
+Pour comprendre comment une intelligence artificielle produit du texte, l’auteur a construit un petit modèle de langage. Ce programme apprend, à partir de textes de Shakespeare, à prévoir le caractère suivant. Les lettres sont d’abord transformées en nombres. Le modèle apprend ensuite à utiliser le texte précédent pour proposer une suite. L’article explique comment il repère les relations entre les caractères et tient compte de leur position. Il décrit aussi l’apprentissage et la production de texte. L’objectif est pédagogique : comprendre les mécanismes, sans prétendre créer un concurrent de ChatGPT.
+
+**Pourquoi c’est important**
+
+Cet exemple rend plus concret le fonctionnement des outils qui génèrent du texte. Il montre aussi qu’un réglage produisant des réponses plus variées ne rend pas le modèle plus intelligent.
+
+[Lire l’article complet](https://dev.to/onlydev75/i-built-a-small-llm-from-scratch-heres-what-i-finally-understood-about-transformer-2h2o)
+
+---
+
+## 7. Durable Task in the Real World: What Problems Does It Actually Solve?
 
 **Thème :** .NET
 
@@ -100,31 +118,13 @@ Le classement thématique facilite la découverte de retours d’expérience tec
 
 **Date de publication :** Mon, 12 Oct 2026 16:30:00 +0000
 
-L’article illustre Durable Task .NET SDK v1.26.0 avec Durable Task Scheduler à travers cinq scénarios : approbation de factures, provisioning Azure, paiements, webhooks désordonnés et investigation d’incidents assistée par IA. L’historique permet de rejouer l’orchestrateur avec les résultats d’activités enregistrés et de reprendre des attentes durables après un redémarrage. Il ne garantit pas des effets externes exactement une fois. L’application conserve les responsabilités d’autorisation, d’idempotence et de réconciliation. Pour les agents, l’appel au modèle appartient à une activité qui sauvegarde une proposition immuable ; l’approbation doit porter sur cette proposition précise, sans la régénérer silencieusement après une interruption.
+Un logiciel peut être interrompu alors qu’il attend une validation ou un paiement. Durable Task aide à mémoriser les étapes accomplies et à reprendre le travail après un redémarrage. L’article présente cinq situations, dont le traitement de factures, les paiements et l’intervention d’un assistant d’IA sur un incident. Mais cet outil ne vérifie pas tout à la place de l’application. Si la réponse d’un service de paiement est perdue, il faut contrôler si le débit a eu lieu avant de réessayer. Une action proposée par une IA doit aussi rester liée à la proposition précisément approuvée.
 
 **Pourquoi c’est important**
 
-Durable Task devient utile lorsque mémoriser et reprendre un processus métier nécessite une coordination complexe. Ses garanties ne remplacent ni les registres faisant autorité, ni la vérification des opérations externes dont le résultat reste incertain.
+Reprendre un traitement après une panne ne suffit pas à garantir un résultat correct. Il faut aussi éviter les paiements en double et vérifier que les actions exécutées correspondent bien aux décisions autorisées.
 
 [Lire l’article complet](https://devblogs.microsoft.com/dotnet/durable-task-in-the-real-world)
-
----
-
-## 7. Your agent's retry bug isn't an AI problem. It's a distributed-systems problem with an LLM on top.
-
-**Thème :** IA Générative
-
-**Source :** Dev.to
-
-**Date de publication :** 2026-10-19T06:42:45Z
-
-L’article explique pourquoi les nouvelles tentatives d’un agent relèvent des systèmes distribués : un timeout ne prouve pas qu’une action distante a échoué. Un remboursement peut ainsi être exécuté deux fois si sa première réponse est perdue. L’application doit enregistrer durablement l’intention avant l’exécution, générer une clé d’idempotence stable et la réutiliser à chaque tentative. Le suivi distingue submitted, confirmed, failed et unknown. Ce dernier état bloque les tentatives automatiques et déclenche une réconciliation avec le service concerné ou son registre. Le modèle propose l’action, tandis que l’application possède son état d’exécution et sa politique de reprise.
-
-**Pourquoi c’est important**
-
-Un meilleur prompt ne résout pas une réponse réseau perdue après une écriture réussie. Les actions modifiant des données doivent utiliser des mécanismes d’idempotence et de réconciliation pour éviter les effets dupliqués.
-
-[Lire l’article complet](https://dev.to/cyclopt_dimitrisk/your-agents-retry-bug-isnt-an-ai-problem-its-a-distributed-systems-problem-with-an-llm-on-top-1i6k)
 
 ---
 
